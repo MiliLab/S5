@@ -8,8 +8,8 @@ This repository provides the official implementation, datasets, and checkpoints 
 
 - **Dataset (RS4P-1M)**:
    We curate RS4P-1M, a large-scale dataset with 1 million unlabeled remote sensing images with pseudo-labels.
-- **S4P (Semi-supervised Pre-training)**:
-   Extends traditional semi-supervised segmentation (S4) into large-scale pre-training (S4P), leveraging RS4P-1M with FixMatch to learn generalizable representations.
+- **S4P (Semi-supervised Semantic Segmentation Pre-training)**:
+   Extends traditional semi-supervised semantic segmentation (S4) into large-scale pre-training, leveraging RS4P-1M with FixMatch to learn generalizable representations.
 - **MoE-MDF (Mixture-of-Experts Multi-Dataset Fine-tuning)**:
    A multi-dataset fine-tuning strategy with shared + task-specific experts, enabling efficient adaptation across RS benchmarks with minimal overhead.
 
