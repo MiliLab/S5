@@ -79,6 +79,19 @@ Unified fine-tuning across multiple RS benchmarks with shared + task-specific ex
 
 ------
 
+# ⭐ Citation
+
+If you find S5 helpful, please consider giving this repo a ⭐ and citing:
+
+```latex
+@article{S5,
+  title={S5: Scalable Semi-Supervised Semantic Segmentation in Remote Sensing},
+  author={Liang Lv and Di Wang and Jing Zhang and Lefei Zhang},
+  journal={arXiv preprint arXiv:2508.12409},
+  year={2025}
+}
+```
+
 ## 🤝 License
 
 Apache License 2.0. Please check [LICENSE.md](https://chatgpt.com/c/docs/LICENSE.md) for details.
