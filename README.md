@@ -26,7 +26,7 @@ This repository provides the official implementation, datasets, and checkpoints 
 
 ## 🔥 News
 
-- **2025.08**: Paper released on arXiv.
+- **2025.08**: Paper released on [arXiv](https://arxiv.org/abs/2508.12409).
 
 ------
 
