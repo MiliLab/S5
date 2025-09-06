@@ -28,6 +28,7 @@ This repository provides the official implementation, datasets, and checkpoints 
 
 - **2025.08**: Paper released on [arXiv](https://arxiv.org/abs/2508.12409).
 - **2025.08**: We released the S4P code and the pretrained weights (ViT-B/L). Download link: [Baidu Netdisk](https://pan.baidu.com/s/1MC3moItUZvriXFeKj7I2jA), extraction code: `huuh`.
+- **2025.09**: We released the fine-tuning code and pretrained weights for remote sensing semantic segmentation (ViT-B/L). Download link: [Baidu Netdisk](https://pan.baidu.com/s/1omtC2Lgrv9MZfMWmourA9g), extraction code: `4xvx`.
 
 ## 📚 Contents
 
