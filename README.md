@@ -69,7 +69,17 @@ RS4P-1M is a large-scale optical remote sensing dataset for semi-supervised sema
 ------
 
 ## 🚀 S4P
-
+### :gear: Installation for Pretraining
+Please install the pretraining dependencies in `S5/requirements.txt`:
+```sh
+# Optionally create a conda environment
+conda create -n s5_seg python=3.10 -y
+conda activate s5_seg
+# Install PyTorch
+conda install pytorch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 pytorch-cuda=12.1 -c pytorch -c nvidia
+# Install other dependencies
+pip install -r requirements.txt
+```
 ------
 
 ## 🚀 MoE-MDF
