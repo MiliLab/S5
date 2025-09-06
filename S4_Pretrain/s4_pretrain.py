@@ -180,7 +180,7 @@ def main():
     iters, epoch = -1, -1
     scaler = torch.cuda.amp.GradScaler(enabled=amp)
     conf_thresh = cfg['conf_thresh']
-    total_epochs = int(cfg['total_iters'] / len(trainloader_u))
+    total_epochs = int(cfg['total_iters'] / len(trainloader_u)) + 1
     # Main loop
     for epoch in range(epoch + 1, total_epochs):
         if ddp:

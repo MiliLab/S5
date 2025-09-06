@@ -1,0 +1,18 @@
+# arguments for dataset
+dataset: openearthmap
+nclass: 9
+crop_size: 512
+data_root: 'Your/Dataset/Path'
+epochs: 100
+batch_size: 12 
+lr: 0.00005
+lr_multi: 1.0
+criterion:
+  name: CELoss
+  kwargs:
+    ignore_index: 255
+conf_thresh: 0.95
+amp: True
+workers: 1
+ignore_index: 255
+eval_mode: resize

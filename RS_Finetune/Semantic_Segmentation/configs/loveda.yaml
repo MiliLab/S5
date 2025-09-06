@@ -1,0 +1,20 @@
+# arguments for dataset
+dataset: loveda
+nclass: 7
+crop_size: 512
+data_root: 'Your/Dataset/Path
+epochs: 100
+batch_size: 12 # per GPU x 4 GPUs
+lr: 0.00005
+lr_multi: 1.0
+criterion:
+  name: CELoss
+  kwargs:
+    ignore_index: 255
+conf_thresh: 0.95
+amp: True
+workers: 1
+ignore_index: 255
+eval_mode: resize
+dilations: [6, 12, 18]
+replace_stride_with_dilation: [False, False, True]

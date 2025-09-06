@@ -1,0 +1,18 @@
+# arguments for dataset
+dataset: potsdam
+nclass: 5
+crop_size: 512
+data_root: 'Your/Dataset/Path'
+epochs: 100
+batch_size: 12 
+lr: 0.00005
+lr_multi: 1.0
+criterion:
+  name: CELoss
+  kwargs:
+    ignore_index: 5
+conf_thresh: 0.95
+amp: False
+workers: 1
+ignore_index: 5
+eval_mode: original

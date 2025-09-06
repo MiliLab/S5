@@ -1,0 +1,56 @@
+dataset: rsseg
+nclass: 9
+epochs: 100
+crop_size: 512
+batch_size: 12
+lr: 0.00005
+lr_multi: 1.0
+workers: 1
+amp: True
+data_root: 'Your/Dataset/Path'
+
+vaihingen:
+  dataset: vaihingen
+  nclass: 5
+  crop_size: 512
+  ignore_index: 5
+  start: 70
+  eval_mode: original
+  criterion:
+    name: CELoss
+    kwargs:
+      ignore_index: 5
+
+potsdam:
+  dataset: potsdam
+  nclass: 5
+  crop_size: 512
+  ignore_index: 5
+  eval_mode: original
+  criterion:
+    name: CELoss
+    kwargs:
+      ignore_index: 5
+
+openearthmap:
+  dataset: openearthmap
+  nclass: 9
+  crop_size: 512
+  ignore_index: 255
+  eval_mode: resize
+  criterion:
+    name: CELoss
+    kwargs:
+      ignore_index: 255
+
+loveda:
+  dataset: loveda
+  nclass: 7
+  crop_size: 512
+  ignore_index: 255
+  eval_mode: resize
+  criterion:
+    name: CELoss
+    kwargs:
+      ignore_index: 255
+
