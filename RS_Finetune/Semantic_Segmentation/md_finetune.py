@@ -240,16 +240,10 @@ def main():
 
             with torch.cuda.amp.autocast(enabled=amp):
                 model.train()
-
                 losses = {}
                 for name in args.tasks:
                     pred = model(imgs[name], name)
-                    if name == 'vaihingen':
-                        weight_vai = 0.0 if epoch < cfg['vaihingen']['start'] else 1.0
-                        losses[name] = criterions[name](pred, masks[name]) * weight_vai
-                    else:
-                        losses[name] = criterions[name](pred, masks[name])
-
+                    losses[name] = criterions[name](pred, masks[name])
                 total_loss = sum(losses.values())
 
             torch.distributed.barrier()
