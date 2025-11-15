@@ -269,7 +269,7 @@ def main():
                 backbone = {"model": model.module.encoder.state_dict()}
                 save_checkpoint(state, backbone, save_dir, args.backbone, "iter")
 
-            if iters >= cfg['total_iters']:
+            if iters >= cfg['total_iters'] and rank == 0:
                 logger.info(f"Training finished at {iters} iterations (target {cfg['total_iters']}).")
                 return
 

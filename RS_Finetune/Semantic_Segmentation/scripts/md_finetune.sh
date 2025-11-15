@@ -27,17 +27,17 @@ PORT=${PORT:-29501}
 export CUDA_VISIBLE_DEVICES=0,1
 
 python -m torch.distributed.launch \
-    --nproc_per_node=${GPUS} \
+    --nproc_per_node=$1 \
     --master_addr=localhost \
-    --master_port=${PORT} \
+    --master_port=$2 \
     --use_env ${method}.py \
     --config=${config} \
-    --backbone ${BACKBONE} \
+    --backbone $3 \
     --init_backbone ${INIT_BACKBONE} \
-    --load_network ${LOAD_NETWORK} \
+    --load_network $4 \
     --experts ${EXPERTS} \
     --part ${PART} \
-    --resume ${RESUME} \
+    --resume $5 \
     --vaihingen-id-path ${vaihingen_id_path} \
     --potsdam-id-path ${potsdam_id_path} \
     --openearthmap-id-path ${openearthmap_id_path} \

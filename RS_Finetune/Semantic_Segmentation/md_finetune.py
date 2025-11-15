@@ -243,8 +243,11 @@ def main():
                 losses = {}
                 for name in args.tasks:
                     pred = model(imgs[name], name)
-                    losses[name] = criterions[name](pred, masks[name])
-                total_loss = sum(losses.values())
+                    if name == 'vaihingen':
+                        weight = 0.0 if epoch < cfg['vaihingen']['start'] else 1.0
+                        losses[name] = criterions[name](pred, masks[name]) * weight
+                    else:
+                        losses[name] = criterions[name](pred, masks[name])
 
             torch.distributed.barrier()
             optimizer.zero_grad()

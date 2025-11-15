@@ -2,7 +2,7 @@
 now=$(date +"%Y%m%d_%H%M%S")
 
 dataset='pretrain'
-method='s4_pretrain1'
+method='s4_pretrain'
 backbone=$3
 
 config=configs/${dataset}.yaml
