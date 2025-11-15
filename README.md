@@ -20,15 +20,15 @@
 
 **S5** is a scalable semi-supervised learning framework designed for remote sensing semantic segmentation and oriented object detection. It includes three core contributions:
 
-\- ***\*Dataset (RS4P-1M)\****:
+- **Dataset (RS4P-1M):**
 
   We curate RS4P-1M, a large-scale dataset with 1 million unlabeled remote sensing images with pseudo-labels.
 
-\- ***\*S4P (Semi-supervised Semantic Segmentation Pre-training)\****:
+- **S4P (Semi-supervised Semantic Segmentation Pre-training):**
 
   Extends traditional semi-supervised semantic segmentation (S4) into large-scale pre-training, leveraging RS4P-1M with FixMatch to learn generalizable representations.
 
-\- ***\*MoE-MDF (Mixture-of-Experts Multi-Dataset Fine-tuning)\****:
+- **MoE-MDF (Mixture-of-Experts Multi-Dataset Fine-tuning):**
 
   A multi-dataset fine-tuning strategy with shared + task-specific experts, enabling efficient adaptation across RS benchmarks with minimal overhead.
 
@@ -37,12 +37,13 @@
 ## 🔥 News
 
 - **2025.08**: Paper released on [arXiv](https://arxiv.org/abs/2508.12409).
-- **2025.08**: Released S4P pretraining code & pretrained weights (ViT-B/L).
-   → Download: BaiduNetdisk (code: `huuh`)
-- **2025.09**: Released fine-tuning code & weights for semantic segmentation (ViT-B/L).
-   → Download: BaiduNetdisk (code: `4xvx`)
-- **2025.09**: Released fine-tuning code & weights for oriented object detection (ViT-B/L).
-   → Download: BaiduNetdisk (code: `y9s3`)
+
+- **2025.08**\: We released the S4P code and the pretrained weights (ViT-B/L). Download link: [Baidu Netdisk](https://pan.baidu.com/s/1MC3moItUZvriXFeKj7I2jA), extraction code: `huuh`.
+
+- **2025.09**: We released the fine-tuning code and weights for remote sensing semantic segmentation (ViT-B/L). Download link: [Baidu Netdisk](https://pan.baidu.com/s/1omtC2Lgrv9MZfMWmourA9g), extraction code: `4xvx`.
+
+- **2025.09**: We released the fine-tuning code and weights for remote sensing rotated object detection (ViT-B/L). Download link: [Baidu Netdisk](https://pan.baidu.com/s/13j5WuYEC6FfhuRpko_9epw), extraction code: `y9s3`.
+
 - **2025.11**: S5 has been accepted as an **Oral** paper at **AAAI 2026**!
 
 ------
@@ -102,7 +103,7 @@ conda install pytorch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 pytorch-cuda=
 pip install -r requirements.txt
 ```
 
-### 🚀 Start Pretraining (Example: ViT-B)
+### 🚙 Start Pretraining (Example: ViT-B)
 
 1. Download the RS4P-1M dataset
 2. Set `data_root` in `S4_Pretrain/configs/pretrain.yaml`
