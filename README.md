@@ -143,7 +143,7 @@ pip install mmengine==0.10.7
 After preparing all datasets (Vaihingen, Potsdam, LoveDA, OpenEarthMap), run the following commands in the `S5/Semantic_Segmentation/scripts/` directory:
 
 ```sh
-bash md_finetune.sh 2 1156 vit_b_moe True Your/Path/vit_b_s4p_upernet
+bash md_finetune.sh 2 1156 vit_b_moe True Your/Path/vit_b_s4p_upernet.pth
 ```
 
 ------
@@ -155,7 +155,7 @@ Prepare DIOR-R and DOTA-v2.0, then run in `S5/Object_detection`:
 ```sh
 CUDA_VISIBLE_DEVICES="0,1,2,3" \
 python -m torch.distributed.launch \
-  --nproc_per_node=6 --master_port=12345 \
+  --nproc_per_node=4 --master_port=12345 \
   tools/train.py ./configs/obb/oriented_rcnn/mtd/vit_b_moe_dior_r_dota2.py \
   --launcher 'pytorch' \
   --options 'find_unused_parameters'=False
