@@ -147,9 +147,6 @@ pip install timm
 ## 🧩 Semantic Segmentation Fine-tuning
 
 First, prepare the datasets by downloading Vaihingen, Potsdam, [LoveDA](https://zenodo.org/records/5706578), and [OpenEarthMap](https://zenodo.org/records/7223446).
-
-ADE20K: [images](http://data.csail.mit.edu/places/ADEchallenge/ADEChallengeData2016.zip)
-
 Organize the dataset directory structure as follows:
 
 ```
