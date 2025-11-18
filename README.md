@@ -54,11 +54,11 @@
 
 ## 📚 Contents
 
-- [Performance](https://chatgpt.com/c/691834fd-a5a8-832e-9c58-83ca5cb2f654#performance)
-- [RS4P-1M](https://chatgpt.com/c/691834fd-a5a8-832e-9c58-83ca5cb2f654#rs4p-1m)
-- [S4P](https://chatgpt.com/c/691834fd-a5a8-832e-9c58-83ca5cb2f654#s4p)
-- [MoE-MDF](https://chatgpt.com/c/691834fd-a5a8-832e-9c58-83ca5cb2f654#moe-mdf)
-- [License](https://chatgpt.com/c/691834fd-a5a8-832e-9c58-83ca5cb2f654#license)
+- [Performance](#performance)
+- [RS4P-1M](#rs4p-1m)
+- [S4P](#s4p-semi-supervised-semantic-segmentation-pre-training)
+- [MoE-MDF](#moe-mdf-multi-dataset-fine-tuning-with-mixture-of-experts)
+- [License](#license)
 
 ------
 
