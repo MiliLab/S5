@@ -1,6 +1,5 @@
 triton==2.3.1
 timm==1.0.12
-mmcv==2.2.0
 mmengine==0.10.5
 mmsegmentation==1.2.2
 fairscale==0.4.13

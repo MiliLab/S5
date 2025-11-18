@@ -81,7 +81,6 @@ def net_process(model, image, cfg, flip=True):
 
     if flip:
         inputs.append(image.flip(3))
-        inputs.append(image.flip(2))
 
     input = torch.cat(inputs, dim=0)
     with torch.no_grad():
@@ -93,10 +92,9 @@ def net_process(model, image, cfg, flip=True):
     for i, inp in enumerate(inputs):
         out = output[i]
         if i == 1 and flip:
-            out = out.flip(2)
-        elif i == 2 and flip:
-            out = out.flip(1)
+            out = torch.flip(out, dims=[2])
         preds.append(out)
+
     output = torch.stack(preds, dim=0).mean(0)
     output = output.unsqueeze(0)
     return output

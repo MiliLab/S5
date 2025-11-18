@@ -20,7 +20,7 @@ BACKBONE=${BACKBONE:-"vit_b_moe"}
 INIT_BACKBONE=${INIT_BACKBONE:-"none"}
 EXPERTS=${EXPERTS:-4}
 PART=${PART:-256}
-RESUME=${RESUME:-"data_root: 'Your/Path/vit_b_s4p_upernet"}
+RESUME=${RESUME:-"data_root: 'Your/Path/vit_b_s4p_upernet.pth"}
 LOAD_NETWORK=${LOAD_NETWORK:-True}
 PORT=${PORT:-29501}
 

@@ -1,3 +1,5 @@
+
+
   <h2 align="center"><strong>S5: Scalable Semi-Supervised Semantic Segmentation in Remote Sensing</strong></h2>
 
 <div align="center">
@@ -10,9 +12,11 @@
 </div>
 
 
+
 <h5 align="center">
 <a href="https://arxiv.org/pdf/2508.12409"> <img src="https://img.shields.io/badge/Arxiv-2508.12409-b31b1b.svg?logo=arXiv"></a>
 </h5>
+
 
 ------
 
@@ -97,10 +101,11 @@ conda create -n s5_seg python=3.10 -y
 conda activate s5_seg
 
 # Install PyTorch
-conda install pytorch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 pytorch-cuda=12.1 -c pytorch -c nvidia
-
+pip install torch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 --index-url https://download.pytorch.org/whl/cu118
 # Install additional dependencies
 pip install -r requirements.txt
+# Install MMCV
+pip install mmcv==2.2.0 -f https://download.openmmlab.com/mmcv/dist/cu118/torch2.3/index.html
 ```
 
 ### 🚙 Start Pretraining (Example: ViT-B)
@@ -134,31 +139,95 @@ conda activate s5_det
 pip install torch==1.10.1+cu111 torchvision==0.11.2+cu111 torchaudio==0.10.1 -f https://download.pytorch.org/whl/cu111/torch_stable.html
 pip install mmcv-full==1.3.16
 pip install mmengine==0.10.7
+pip install timm
 ```
 
 ------
 
 ## 🧩 Semantic Segmentation Fine-tuning
 
-After preparing all datasets (Vaihingen, Potsdam, LoveDA, OpenEarthMap), run the following commands in the `S5/Semantic_Segmentation/scripts/` directory:
+First, prepare the datasets by downloading Vaihingen, Potsdam, [LoveDA](https://zenodo.org/records/5706578), and [OpenEarthMap](https://zenodo.org/records/7223446).
+
+ADE20K: [images](http://data.csail.mit.edu/places/ADEchallenge/ADEChallengeData2016.zip)
+
+Organize the dataset directory structure as follows:
+
+```
+├── [Your Dataset Path]
+    ├── vaihingen
+    │   ├── img_dir
+    │   └── ann_dir
+    ├── potsdam
+    │   ├── img_dir
+    │   └── ann_dir 
+    ├── loveda
+    │   ├── Train
+    │   ├── Val
+    │   └── Test
+    └── openearthmap
+        ├── aachen
+        │   ...
+        └── zanzibar 
+```
+
+Once all datasets are properly set up, update the `data_root` field in the configuration file `S5/Semantic_Segmentation/configs/rsseg.yaml` to point to your dataset root directory. Then, navigate to the `S5/Semantic_Segmentation/scripts/` directory and run the following commands:
 
 ```sh
 bash md_finetune.sh 2 1156 vit_b_moe True Your/Path/vit_b_s4p_upernet.pth
+```
+
+The test script is as follows, using the Vaihingen dataset as an example:
+
+```bash
+python evaluate.py --config .configs/rsseg.yaml --dataset vaihingen --ckpt-path ./checkpoint/s5_vit_b_moe_mdf.pth --backbone vit_b_moe
 ```
 
 ------
 
 ## 🛩 Oriented Object Detection Fine-tuning
 
-Prepare DIOR-R and DOTA-v2.0, then run in `S5/Object_detection`:
+Prepare [DIOR-R](https://drive.google.com/drive/folders/1UdlgHk49iu6WpcJ5467iT-UqNPpx__CC) and  [DOTA-v2.0](https://captain-whu.github.io/DOTA/dataset.html), then run in `S5/Object_detection`:
 
 ```sh
 CUDA_VISIBLE_DEVICES="0,1,2,3" \
 python -m torch.distributed.launch \
-  --nproc_per_node=4 --master_port=12345 \
-  tools/train.py ./configs/obb/oriented_rcnn/mtd/vit_b_moe_dior_r_dota2.py \
-  --launcher 'pytorch' \
-  --options 'find_unused_parameters'=False
+  --nproc_per_node=4 \
+  --master_port=12345 \
+  tools/train.py \
+  ./configs/obb/oriented_rcnn/mtd/vit_b_moe_dior_r_dota2.py \
+  --launcher pytorch \
+  --options find_unused_parameters=False
+```
+
+Below are the test scripts for the DIOR and DOTA2.0 datasets, respectively:
+
+Test script for DIOR:
+
+```sh
+CUDA_VISIBLE_DEVICES="0,1,2,3" python -m torch.distributed.launch \
+  --nproc_per_node=4 \
+  --master_port=12345 \
+  tools/test.py \
+  ./configs/obb/oriented_rcnn/mtd/vit_b_moe_dior_r_dota2.py \
+  --dataset-cfg ./configs/obb/_base_/datasets/dior.py \
+  --launcher pytorch \
+  ./s5_vit_b_moe_mdf.pth \
+  --eval mAP
+```
+
+Test script for DOTA2.0:
+
+```sh
+CUDA_VISIBLE_DEVICES="0,1,2,3" python -m torch.distributed.launch \
+  --nproc_per_node=4 \
+  --master_port=12345 \
+  tools/test.py \
+  ./configs/obb/oriented_rcnn/mtd/vit_b_moe_dior_r_dota2.py \
+  --dataset-cfg ./configs/obb/_base_/datasets/dota2.py \
+  --launcher pytorch \
+  ./s5_vit_b_moe_mdf.pth \
+  --format-only \
+  --options "submission_dir=./results/orcn_vit_b_moe_dota20"
 ```
 
 ------
