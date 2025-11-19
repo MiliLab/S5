@@ -112,7 +112,18 @@ pip install mmcv==2.2.0 -f https://download.openmmlab.com/mmcv/dist/cu118/torch2
 
 ### 🚙 Start Pretraining (Example: ViT-B)
 
-1. Download the RS4P-1M dataset
+1. Download the RS4P-1M dataset and organize it into the following directory structure:
+```
+├── [Your Dataset Path]
+    ├── labeled
+    │   └── iSAID
+    │       ├── images
+    │       └── masks
+    └── unlabeled
+        └── RS4P-1M
+            ├── images
+            └── masks
+```
 2. Set `data_root` in `S4_Pretrain/configs/pretrain.yaml`
 3. Run in the `S5/S4_Pretrain/scripts` directory:
 
