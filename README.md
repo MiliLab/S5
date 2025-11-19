@@ -226,7 +226,7 @@ CUDA_VISIBLE_DEVICES="0,1,2,3" python -m torch.distributed.launch \
   --launcher pytorch \
   ./s5_vit_b_moe_mdf.pth \
   --format-only \
-  --options "submission_dir=./results/orcn_vit_b_moe_dota20"
+  --options 'save_dir'='./results/orcn_vit_b_moe_dota20'
 ```
 
 ------
