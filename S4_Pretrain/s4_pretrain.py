@@ -135,7 +135,7 @@ def main():
         model = nn.SyncBatchNorm.convert_sync_batchnorm(model)
         model = nn.parallel.DistributedDataParallel(model, device_ids=[int(os.environ["LOCAL_RANK"])],
                                                     broadcast_buffers=False, find_unused_parameters=True)
-    if args.backbone in {'vit_l', 'vit_b', 'vit_h', 'vit_l_rvsa'}:
+    if args.backbone in {'vit_l', 'vit_b', 'vit_h'}:
         model._set_static_graph()
 
     if rank == 0:
