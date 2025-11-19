@@ -14,7 +14,9 @@
 
 
 <h5 align="center">
-<a href="https://arxiv.org/pdf/2508.12409.pdf"> <img src="https://img.shields.io/badge/Arxiv-2508.12409v2-b31b1b.svg?logo=arXiv"></a>
+<a href="https://arxiv.org/pdf/2508.12409.pdf">
+<img src="https://img.shields.io/badge/Arxiv-2508.12409v2-b31b1b.svg?logo=arXiv&cacheSeconds=1">
+</a>
 </h5>
 
 
