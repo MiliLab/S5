@@ -2,23 +2,22 @@
 
   <h2 align="center"><strong>S5: Scalable Semi-Supervised Semantic Segmentation in Remote Sensing</strong></h2>
 
-<div align="center">
-<h5>
-<em>Liang Lv<sup>1</sup>, Di Wang<sup>1,2</sup>, Jing Zhang<sup>1 †</sup>, Lefei Zhang<sup>1 †</sup></em>
-    <br><br>
-        <sup>1</sup> National Engineering Research Center for Multimedia Software, School of Computer Science, Wuhan University, China<br/> 
-        <sup>2</sup> Zhongguancun Academy, China
-</h5>
-</div>
+  <p align="center">
+    Liang Lv<sup>1</sup>&nbsp;&nbsp;&nbsp;
+    Di Wang<sup>1,2</sup>&nbsp;&nbsp;&nbsp;
+    Jing Zhang<sup>1 †</sup>&nbsp;&nbsp;&nbsp;
+    Lefei Zhang<sup>1 †</sup>
+    <br>
+    <sup>1</sup> National Engineering Research Center for Multimedia Software, School of Computer Science, Wuhan University, China&nbsp;&nbsp;&nbsp;
+    <sup>2</sup> Zhongguancun Academy, China
+  </p>
 
+  <div align='center' style="font-size: larger;"><strong>AAAI 2026 Oral</strong></div>  
 
-
-<h5 align="center">
-<a href="https://arxiv.org/pdf/2508.12409v2">
-<img src="https://img.shields.io/badge/Arxiv-2508.12409v2-b31b1b.svg?logo=arXiv">
-</a>
-</h5>
-
+  <p align="center">
+    📃 <a href="https://arxiv.org/pdf/2508.12409v2" target="_blank">Paper</a> |
+    🤗 <a href="https://huggingface.co/lianglyu/S5" target="_blank">Models</a>
+</p>
 
 ------
 
