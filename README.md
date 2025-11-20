@@ -10,10 +10,10 @@
     <br>
 <div align="center">
   <p>
-    <sup>1</sup> National Engineering Research Center for Multimedia Software, School of Computer Science, Wuhan University, China
+    <sup>1</sup> National Engineering Research Center for Multimedia Software, School of Computer Science, Wuhan University
   </p>
   <p>
-    <sup>2</sup> Zhongguancun Academy, China
+    <sup>2</sup> Zhongguancun Academy
   </p>
 </div>
   </p>
