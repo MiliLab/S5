@@ -8,8 +8,14 @@
     Jing Zhang<sup>1 †</sup>&nbsp;&nbsp;&nbsp;
     Lefei Zhang<sup>1 †</sup>
     <br>
-    <sup>1</sup> National Engineering Research Center for Multimedia Software, School of Computer Science, Wuhan University, China&nbsp;&nbsp;&nbsp;
+<div align="center">
+  <p>
+    <sup>1</sup> National Engineering Research Center for Multimedia Software, School of Computer Science, Wuhan University, China
+  </p>
+  <p>
     <sup>2</sup> Zhongguancun Academy, China
+  </p>
+</div>
   </p>
 
   <div align='center' style="font-size: larger;"><strong>AAAI 2026 Oral</strong></div>  
