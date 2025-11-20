@@ -22,7 +22,8 @@
 
   <p align="center">
     📃 <a href="https://arxiv.org/pdf/2508.12409v2" target="_blank">Paper</a> |
-    🤗 <a href="https://huggingface.co/lianglyu/S5" target="_blank">Models</a>
+    🤗 <a href="https://huggingface.co/lianglyu/S5" target="_blank">Models</a> |
+    🤗 <a href="https://huggingface.co/datasets/lianglyu/R4P-1M" target="_blank">Datasets</a>
 </p>
 
 ------
