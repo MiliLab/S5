@@ -68,16 +68,12 @@ def train_detector(model,
     len_dior = len(dior_dataset)
     len_dota = len(dota_dataset)
     max_len = max(len_dior, len_dota)
-    print("len dior_dataset", len(dior_dataset))
-    print("len dota_dataset", len(dota_dataset))
-    # print("max_len", max_len)
 
     if len_dior != max_len:
         dior_dataset.repeat_to_length(max_len)
     if len_dota != max_len:
         dota_dataset.repeat_to_length(max_len)
-    print("len dior_dataset", len(dior_dataset))
-    print("len dota_dataset", len(dota_dataset))
+
 
     if 'imgs_per_gpu' in cfg.data:
         logger.warning('"imgs_per_gpu" is deprecated in MMDet V2.0. '
