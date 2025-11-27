@@ -131,10 +131,10 @@ pip install mmcv==2.2.0 -f https://download.openmmlab.com/mmcv/dist/cu118/torch2
             └── masks
 ```
 2. Set `data_root` in `S4_Pretrain/configs/pretrain.yaml`
-3. Run in the `S5/S4_Pretrain/scripts` directory:
+3. Run in the `S5/S4_Pretrain` directory:
 
 ```sh
-bash train.sh 8 12345 vit_b mae
+bash scripts/train.sh 8 12345 vit_b mae
 ```
 
 ------
