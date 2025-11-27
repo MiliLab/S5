@@ -6,8 +6,8 @@ method='s4_pretrain'
 backbone=$3
 
 config=configs/${dataset}.yaml
-labeled_id_path=splits/$dataset/labeled/labeled.txt
-unlabeled_id_path=splits/$dataset/unlabeled/RS4P-1M.txt
+labeled_id_path=splits/labeled/labeled.txt
+unlabeled_id_path=splits/unlabeled/RS4P-1M.txt
 save_path=exp/$method/$backbone/
 
 mkdir -p $save_path

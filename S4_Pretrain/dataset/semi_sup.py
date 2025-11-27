@@ -8,7 +8,6 @@ import cv2
 import torch
 from torch.utils.data import Dataset
 from torchvision import transforms
-import albumentations as A
 from dataset.transform import *
 from torchvision import transforms as T
 
