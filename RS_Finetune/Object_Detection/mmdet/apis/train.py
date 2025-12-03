@@ -71,9 +71,9 @@ def train_detector(model,
 
     if len_dior != max_len:
         dior_dataset.repeat_to_length(max_len)
+        dior_dataset._set_group_flag()
     if len_dota != max_len:
         dota_dataset.repeat_to_length(max_len)
-
 
     if 'imgs_per_gpu' in cfg.data:
         logger.warning('"imgs_per_gpu" is deprecated in MMDet V2.0. '
